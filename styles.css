@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg-color: #2f4f4f;
+  --main-bg-color: #fff;
+  --bg-image: no-repeat url('assets/images/nate-rayfield-_WR6tUIAJe8-unsplash.jpg') 100% ;
+  --card-height: 2223.56px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--body-bg-color);
+}
+
+main {
+  width: 70%;
+  height: var(--card-height);
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--main-bg-color);
+}
+
+main .bg-image {
+  min-height: 100%;
+  width: 40%;
+  background: var(--bg-image);
+  background-position: bottom;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
