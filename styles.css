@@ -13,6 +13,8 @@
     url("assets/images/nate-rayfield-_WR6tUIAJe8-unsplash.jpg");
   --card-height: 562px;
   --card-width: 962px;
+  --font-stack: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -24,6 +26,7 @@ body {
   background: var(--bg-image);
   background-position: bottom;
   background-size: cover;
+  font-family: var(--font-stack);
 }
 
 main {
@@ -42,7 +45,7 @@ main .bg-image {
   background: var(--bg-image);
   background-position: bottom;
   background-size: cover;
-border-radius: inherit;
+  border-radius: inherit;
   position: relative;
   border: 6px solid #fff;
 
@@ -70,15 +73,21 @@ border-radius: inherit;
   }
 }
 
-main .form-section{
-    background-color: var(--main-bg-color);
-    border-top-right-radius: inherit;
+main .form-section {
+  background-color: var(--main-bg-color);
+  border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
-    height: 100%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 40px;
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
 
+  /* the odin logo */
+  & img {
+    height: 80px;
+    aspect-ratio: 1/1;
+    filter: invert(100%);
+  }
 }
