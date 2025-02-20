@@ -10,7 +10,8 @@
   --body-bg-color: #2f4f4f;
   --main-bg-color: #fff;
   --border-color: grey;
-  --input-field-bg-color: rgb(128, 128, 128,20%);
+  --green: #596d48;
+  --input-field-bg-color: rgb(128, 128, 128, 20%);
   --bg-image: no-repeat
     url("assets/images/nate-rayfield-_WR6tUIAJe8-unsplash.jpg");
   --card-height: 562px;
@@ -42,24 +43,24 @@ input {
   transition: background-color 200ms ease-in;
 }
 
-input:hover{
+input:hover {
   background-color: var(--input-field-bg-color);
 }
 
-
-input:focus, input:focus ~ label{
- --border-color: blue;
+input:focus,
+input:focus ~ label {
+  --border-color: blue;
 }
 
-input:user-invalid, input:user-invalid + label{
+input:user-invalid,
+input:user-invalid + label {
   --border-color: red;
 }
 
-
-input:user-valid, input:user-valid + label{
+input:user-valid,
+input:user-valid + label {
   --border-color: green;
 }
-
 
 main {
   width: var(--card-width);
@@ -129,6 +130,32 @@ main .form-section {
       filter: invert(100%);
     }
   }
+  & .button-area {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 0.6rem;
+    gap: 1.2rem;
+    font-size: 0.8rem;
+    font-family: inherit;
+
+    & button {
+      all: unset;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      width: 180px;
+      height: 30px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      background-color: var(--green);
+    }
+
+    & p a {
+      color: var(--green);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
 }
 
 main .form-section form {
@@ -156,7 +183,6 @@ main .form-section form .input-boxes {
   margin-bottom: 1rem;
 }
 
-
 .input-div label {
   position: absolute;
   left: 1rem;
@@ -168,9 +194,16 @@ main .form-section form .input-boxes {
 }
 
 .input-div input:focus + label,
-.input-div input:not(:placeholder-shown) + label{
+.input-div input:not(:placeholder-shown) + label {
   top: -0.6rem;
   font-size: 0.8rem;
   left: 0.6rem;
   background-color: var(--main-bg-color);
 }
+
+/* .form-section .button-area {
+  border: 2px solid black;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+} */
