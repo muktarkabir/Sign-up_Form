@@ -15,6 +15,7 @@
   --card-width: 962px;
   --font-stack: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --text-field-width: 270px;
 }
 
 body {
@@ -29,9 +30,18 @@ body {
   font-family: var(--font-stack);
 }
 
-input{
-    width: 270px;
-    height: 30px;
+input {
+  width: var(--text-field-width);
+  height: 30px;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+label {
+  font-size: 0.8rem;
+}
+
+input[type="text"] {
+  transition: all 0.5s ease-in-out;
 }
 
 main {
@@ -88,37 +98,66 @@ main .form-section {
   flex-direction: column;
   padding-top: 20px;
 
-   & .heading{
+  & .heading {
     display: flex;
     flex-direction: column;
-    align-self: center; 
+    align-self: center;
     justify-content: center;
     align-items: center;
     /* the odin logo */
-  & img {
-    width: 80px;
-    aspect-ratio: 1/1;
-    filter: invert(100%);
-  }
-   } 
-
-}
-
-main .form-section form{
-    height: 80%;
-}
-
-main .form-section form .input-boxes{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
-
-    & .form-column{
-        display: flex;
-        justify-content: stretch;
-        gap: 20px;
-        width: 100%;
-
+    & img {
+      width: 80px;
+      aspect-ratio: 1/1;
+      filter: invert(100%);
     }
+  }
+}
+
+main .form-section form {
+  height: 80%;
+}
+
+main .form-section form .input-boxes {
+  display: flex;
+  flex-direction: column;
+  min-height: 40%;
+  gap: 20px;
+  margin-top: 40px;
+
+  & .form-column {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+.input-div {
+  position: relative;
+  background-color: blue;
+  width: var(--text-field-width);
+  margin-bottom: 1.8rem;
+}
+
+.input-div input {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.input-div label {
+  position: absolute;
+  left: 1rem;
+  top: 0.4rem;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  color: gray;
+}
+
+.input-div input:focus + label,
+.input-div input:not(:placeholder-shown) + label{
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.6rem;
+  background-color: #fff;
+  color: black;
 }
