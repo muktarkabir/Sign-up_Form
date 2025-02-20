@@ -34,34 +34,48 @@
           <div class="input-boxes">
             <div class="form-column">
               <div class="input-div">
-                <input type="text" id="first-name" placeholder=" "/>
+                <input type="text" id="first-name" placeholder=" " required />
                 <label for="first-name">First Name</label>
               </div>
               <div class="input-div">
-                <input type="text" id="last-name" placeholder=" "/>
+                <input type="text" id="last-name" placeholder=" " required />
                 <label for="last-name">Last Name</label>
               </div>
             </div>
             <div class="form-column">
               <div class="input-div">
-                <input type="email" id="email" placeholder=" "/>
+                <input type="email" id="email" placeholder=" " required />
                 <label for="email">Email</label>
               </div>
               <div class="input-div">
-                <input type="tel" id="phone-number" placeholder=" "/>
+                <input
+                  type="tel"
+                  id="phone-number"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder=" "
+                  required
+                />
                 <label for="phone-number">Phone Number</label>
               </div>
             </div>
             <div class="form-column">
               <div class="input-div">
-                <input type="password" id="password" placeholder=" "/>
+                <input type="password" id="password" placeholder=" " required />
                 <label for="password">Password</label>
               </div>
               <div class="input-div">
-                <input type="password" id="confirm-password" placeholder=" "/>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder=" "
+                  required
+                />
                 <label for="confirm-password">Confirm Password</label>
               </div>
             </div>
+          </div>
+          <div class="button-area">
+            <button type="submit">Create acount</button>
           </div>
         </form>
       </div>

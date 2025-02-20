@@ -9,13 +9,15 @@
 :root {
   --body-bg-color: #2f4f4f;
   --main-bg-color: #fff;
+  --border-color: grey;
+  --input-field-bg-color: rgb(128, 128, 128,20%);
   --bg-image: no-repeat
     url("assets/images/nate-rayfield-_WR6tUIAJe8-unsplash.jpg");
   --card-height: 562px;
   --card-width: 962px;
+  --text-field-width: 270px;
   --font-stack: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --text-field-width: 270px;
 }
 
 body {
@@ -33,16 +35,31 @@ body {
 input {
   width: var(--text-field-width);
   height: 30px;
-  border: 1px solid grey;
+  border: 1px solid var(--border-color);
   padding: 0 10px;
-}
-label {
-  font-size: 0.8rem;
+  border-radius: 1.4px;
+  outline: none;
+  transition: background-color 200ms ease-in;
 }
 
-input[type="text"] {
-  transition: all 0.5s ease-in-out;
+input:hover{
+  background-color: var(--input-field-bg-color);
 }
+
+
+input:focus, input:focus ~ label{
+ --border-color: blue;
+}
+
+input:user-invalid, input:user-invalid + label{
+  --border-color: red;
+}
+
+
+input:user-valid, input:user-valid + label{
+  --border-color: green;
+}
+
 
 main {
   width: var(--card-width);
@@ -62,7 +79,7 @@ main .bg-image {
   background-size: cover;
   border-radius: inherit;
   position: relative;
-  border: 6px solid #fff;
+  border: 6px solid var(--main-bg-color);
 
   & .logo-part {
     color: #fff;
@@ -104,6 +121,7 @@ main .form-section {
     align-self: center;
     justify-content: center;
     align-items: center;
+    color: rgb(88, 87, 87);
     /* the odin logo */
     & img {
       width: 80px;
@@ -134,30 +152,25 @@ main .form-section form .input-boxes {
 
 .input-div {
   position: relative;
-  background-color: blue;
   width: var(--text-field-width);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-.input-div input {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .input-div label {
   position: absolute;
   left: 1rem;
   top: 0.4rem;
   transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-  color: gray;
+  font-size: 0.8rem;
+  color: var(--border-color);
+  cursor: text;
 }
 
 .input-div input:focus + label,
 .input-div input:not(:placeholder-shown) + label{
-  top: -0.5rem;
+  top: -0.6rem;
   font-size: 0.8rem;
   left: 0.6rem;
-  background-color: #fff;
-  color: black;
+  background-color: var(--main-bg-color);
 }
